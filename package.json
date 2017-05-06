@@ -81,6 +81,7 @@
     "react-dom": "15.3.2",
     "react-keydown": "^1.6.2",
     "react-router": "^2.8.1",
+    "react-table": "^5.6.0",
     "react-tap-event-plugin": "^1.0.0",
     "request": "^2.75.0"
   },

@@ -22,7 +22,6 @@ export default class ExpenseHandler {
   }
 
   get(req, res) {
-    console.log(1);
     const id = req.query.id;
     const filters = {};
     if (id && typeof id === 'string') {
@@ -37,11 +36,12 @@ export default class ExpenseHandler {
   del(req, res) {
     const id = req.query.id;
     if (!id || typeof id !== 'string') {
-      res.status(500).end({ serverError: 'Type of id should be string.' });
+      res.status(500).send({ serverError: 'Type of id should be string.' });
       return;
     }
+    const filters = { $where: `this._id == '${id}'` };
     this.db.getConnection()
-    .then(db => this.crud.remove(db.collection(this.collectionName)))
+    .then(db => this.crud.remove(db.collection(this.collectionName), filters))
     .then(() => res.status(200).send(JSON.stringify({ message: 'Succefully deleted' })))
     .catch(() => res.status(500).send({ serverError: 'Error in deleting entry' }));
   }
