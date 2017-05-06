@@ -1,3 +1,5 @@
+import { ObjectId } from 'mongodb';
+
 export default class DBCRUD {
 
   constructor() {
@@ -29,6 +31,15 @@ export default class DBCRUD {
       .then(response => response.toArray())
       .then(data => data)
       .catch(err => err);
+  }
+
+  remove(collection, filters = {}) {
+    return new Promise((resolve, reject) => {
+      collection.remove(filters, filters, (err, result) => {
+        if (err) return reject(err);
+        return resolve(result);
+      });
+    });
   }
 
 }
