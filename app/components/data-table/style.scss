@@ -1,0 +1,35 @@
+.component-data-table {
+  font-size: 14px;
+  .ReactTable .rt-thead.-header {
+    border-bottom: 1px solid;
+  }
+  .rt-thead.-header > div {
+    font-weight: bold;
+  }
+  .rt-thead .rt-tr {
+    text-align: left;
+  }
+  .rt-td {
+    display: flex;
+    align-items: center;
+  }
+  .ReactTable {
+    .select-wrap select {
+      min-width: 60px;
+    }
+  }
+  .-pagination {
+    float: right;
+    display: -webkit-inline-box;
+    box-shadow: none;
+    border-top: none;
+  }
+  .rt-tbody {
+    .rt-tr-group {
+      border:none;
+    }
+      .rt-td {
+        border:none;
+      }
+  }
+}

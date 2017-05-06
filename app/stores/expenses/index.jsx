@@ -2,7 +2,7 @@ import { observable } from 'mobx';
 
 class ExpencesStore {
 
-  @observable EXPENSES = {};
+  @observable EXPENSES = [];
 
 }
 

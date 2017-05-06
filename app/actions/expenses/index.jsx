@@ -13,7 +13,7 @@ export default class ExpensesActions {
 
   @action('Update expenses store')
   updateExpenses(expenses) {
-    ExpencesStore.EXPENSES = expenses || {};
+    ExpencesStore.EXPENSES = expenses.data || [];
   }
 
   getExpenses() {
@@ -30,7 +30,16 @@ export default class ExpensesActions {
     .then(this.updateExpenses)
     .catch((err) => {
       ActionUtils.setToastMessage(false, false, err.serverError);
-      this.updateExpenses();
+      this.updateExpenses({});
+    });
+  }
+
+  postExpenses(data) {
+    this.expensesService.getExpenses(data)
+    .then(this.updateExpenses)
+    .catch((err) => {
+      ActionUtils.setToastMessage(false, false, err.serverError);
+      this.updateExpenses({});
     });
   }
 

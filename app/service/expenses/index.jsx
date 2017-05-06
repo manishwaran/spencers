@@ -16,7 +16,7 @@ export default class ExpensesService extends ServiceUtils {
     });
   }
 
-  deleteExpences(id) {
+  deleteExpenses(id) {
     return new Promise((resolve, reject) => {
       fetch(`/spencers/expenses?id=${id}`, {
         method: 'DELETE',
@@ -28,7 +28,7 @@ export default class ExpensesService extends ServiceUtils {
     });
   }
 
-  postExpences(expense) {
+  postExpenses(expense) {
     return new Promise((resolve, reject) => {
       fetch('/spencers/expenses', {
         method: 'POST',
