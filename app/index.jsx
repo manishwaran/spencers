@@ -7,7 +7,7 @@ import { Router, Route, browserHistory } from 'react-router';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 
-import { Login } from './view';
+import { Login, Expenses } from './views';
 
 mobx.useStrict(true);
 injectTapEventPlugin();
@@ -16,6 +16,7 @@ render((
     <Router history={browserHistory}>
       <Route path="/">
         <Route path="login" component={Login} />
+        <Route path="expences" component={Expenses} />
       </Route>
     </Router>
   </MuiThemeProvider>
