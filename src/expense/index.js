@@ -18,10 +18,11 @@ export default class ExpenseHandler {
     this.db.getConnection()
     .then(db => this.crud.save(db.collection(this.collectionName), data))
     .then(() => res.status(200).send(JSON.stringify({ message: 'Expense has been added' })))
-    .catch(() => res.status(500).send(JSON.stringify({ message: 'Expense is not added' })));
+    .catch(() => res.status(500).send(JSON.stringify({ serverError: 'Expense is not added' })));
   }
 
   get(req, res) {
+    console.log(1);
     const id = req.query.id;
     const filters = {};
     if (id && typeof id === 'string') {
@@ -30,19 +31,19 @@ export default class ExpenseHandler {
     this.db.getConnection()
     .then(db => this.crud.read(db.collection(this.collectionName), filters))
     .then(data => res.status(200).send(JSON.stringify({ data, message: 'All data fetched' })))
-    .catch(() => res.status(500).send({ message: 'Error in getting data' }));
+    .catch(() => res.status(500).send({ serverError: 'Error in getting data' }));
   }
 
   del(req, res) {
     const id = req.query.id;
     if (!id || typeof id !== 'string') {
-      res.status(500).end({ message: 'Type of id should be string.' });
+      res.status(500).end({ serverError: 'Type of id should be string.' });
       return;
     }
     this.db.getConnection()
     .then(db => this.crud.remove(db.collection(this.collectionName)))
     .then(() => res.status(200).send(JSON.stringify({ message: 'Succefully deleted' })))
-    .catch(() => res.status(500).send({ message: 'Error in deleting entry' }));
+    .catch(() => res.status(500).send({ serverError: 'Error in deleting entry' }));
   }
 
 }
