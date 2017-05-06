@@ -6,26 +6,26 @@ export default class DBCRUD {
     this.find = this.find.bind(this);
   }
 
-  save(db, collectionName, data) {
+  save(collection, data) {
     return new Promise((resolve, reject) => {
-      db.collection(collectionName).save(data, (err, result) => {
+      collection.save(data, (err, result) => {
         if (err) return reject(err);
         return resolve(result);
       });
     });
   }
 
-  find(db, collectionName, filters, fields = {}) {
+  find(collection, filters, fields = {}) {
     return new Promise((resolve, reject) => {
-      db.collection(collectionName).find(filters, fields, (err, result) => {
+      collection.find(filters, fields, (err, result) => {
         if (err) return reject(err);
         return resolve(result);
       });
     });
   }
 
-  read(db, collectionName, filters = {}, fields = {}) {
-    return this.find(db, collectionName, filters, fields)
+  read(collection, filters = {}, fields = {}) {
+    return this.find(collection, filters, fields)
       .then(response => response.toArray())
       .then(data => data)
       .catch(err => err);
