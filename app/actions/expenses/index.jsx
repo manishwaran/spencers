@@ -35,8 +35,9 @@ export default class ExpensesActions {
   }
 
   postExpenses(data) {
-    this.expensesService.getExpenses(data)
+    this.expensesService.postExpenses(data)
     .then(this.updateExpenses)
+    .then(this.getExpenses)
     .catch((err) => {
       ActionUtils.setToastMessage(false, false, err.serverError);
       this.updateExpenses({});

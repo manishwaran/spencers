@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
+import constants from '../../constants';
 import ServiceUtils from '../service-utils';
 
 export default class ExpensesService extends ServiceUtils {
@@ -18,7 +19,7 @@ export default class ExpensesService extends ServiceUtils {
 
   deleteExpenses(id) {
     return new Promise((resolve, reject) => {
-      fetch(`/spencers/expenses?id=${id}`, {
+      fetch(`/spencers/expense?id=${id}`, {
         method: 'DELETE',
         credentials: 'same-origin',
       })
@@ -30,7 +31,8 @@ export default class ExpensesService extends ServiceUtils {
 
   postExpenses(expense) {
     return new Promise((resolve, reject) => {
-      fetch('/spencers/expenses', {
+      fetch('/spencers/expense', {
+        headers: constants.serviceHeaders,
         method: 'POST',
         body: JSON.stringify(expense),
         credentials: 'same-origin',

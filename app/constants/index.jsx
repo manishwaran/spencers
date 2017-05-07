@@ -1,4 +1,8 @@
 export default {
+  serviceHeaders: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  },
   expensesTableHeader: [
     { header: 'Title', accessor: 'title' },
     { header: 'Amount', accessor: 'amount' },

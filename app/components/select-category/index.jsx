@@ -14,7 +14,7 @@ export default class SelectCategory extends Component {
     this.onUpdateInput = this.onUpdateInput.bind(this);
     this.onNewRequest = this.onNewRequest.bind(this);
     this.state = {
-      searchText: 'hi',
+      searchText: '',
       values: [],
     };
   }
