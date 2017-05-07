@@ -16,9 +16,21 @@ export default class StatsService extends ServiceUtils {
     });
   }
 
-  getDailyStats() {
+  getDailyStats(category) {
     return new Promise((resolve, reject) => {
-      fetch('/spencers/stats/day', {
+      fetch(`/spencers/stats/day?category=${category}`, {
+        method: 'GET',
+        credentials: 'same-origin',
+      })
+      .then(this.checkForError)
+      .then(resolve)
+      .catch(reject);
+    });
+  }
+
+  getMonthlyStats(category) {
+    return new Promise((resolve, reject) => {
+      fetch(`/spencers/stats/monthly?category=${category}`, {
         method: 'GET',
         credentials: 'same-origin',
       })
