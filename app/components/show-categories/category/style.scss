@@ -1,0 +1,13 @@
+.component-category {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  border: 1px solid #ccc;
+  .category-name {
+    min-width: 100px;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+}
