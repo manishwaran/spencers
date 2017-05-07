@@ -20,8 +20,9 @@ export default class ExpensesActions {
     this.expensesService.getExpenses()
     .then(this.updateExpenses)
     .catch((err) => {
-      ActionUtils.setToastMessage(false, false, err.serverError);
-      this.updateExpenses();
+      console.log(err);
+      // ActionUtils.setToastMessage(false, false, err.serverError);
+      this.updateExpenses({});
     });
   }
 

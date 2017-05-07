@@ -7,7 +7,7 @@ export default {
     { header: 'Title', accessor: 'title' },
     { header: 'Amount', accessor: 'amount' },
     { header: 'Category', accessor: 'category' },
-    { header: 'Notes', accessor: 'category' },
+    { header: 'Notes', accessor: 'notes' },
   ],
   defaultCategory: [
     'Fuel',

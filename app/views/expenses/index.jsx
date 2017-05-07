@@ -27,7 +27,7 @@ export default class Expenses extends ExpensesBase {
         <div className="expenses-list">
           <Table
             data={ExpencesStore.EXPENSES}
-            columns={constants.expensesTableHeader}
+            columns={this.getTableHeader()}
             previousText="<<"
             nextText=">>"
             rowsText=""

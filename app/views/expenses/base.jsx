@@ -25,12 +25,23 @@ export default class ExpensesBase extends Component {
     this.expensesActions.getExpenses();
   }
 
+  getTableHeader() {
+    return [
+      { header: 'Title', accessor: 'title' },
+      { header: 'Amount', accessor: 'amount' },
+      { header: 'Category',
+        accessor: 'category',
+        render: data => ((data.value && data.value.join(' ')) || 'NA'),
+      },
+      { header: 'Notes', accessor: 'notes' },
+    ];
+  }
+
   addNewList() {
     this.setState({ addNewList: true });
   }
 
   saveNewList(data) {
-    console.log(data);
     this.expensesActions.postExpenses(data);
     this.setState({ addNewList: false });
   }
@@ -38,5 +49,6 @@ export default class ExpensesBase extends Component {
   cancelSaveAction() {
     this.setState({ addNewList: false });
   }
+
 
 }
