@@ -8,7 +8,7 @@ export default class DBCRUD {
 
   save(collection, data) {
     return new Promise((resolve, reject) => {
-      collection.save(data, (err, result) => {
+      collection.insert(data, (err, result) => {
         if (err) return reject(err);
         return resolve(result);
       });
