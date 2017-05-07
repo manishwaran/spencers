@@ -14,6 +14,8 @@ export default class ExpensesBase extends Component {
     super(props);
     this.expensesActions = new ExpensesActions();
     this.addNewList = this.addNewList.bind(this);
+    this.saveNewList = this.saveNewList.bind(this);
+    this.cancelSaveAction = this.cancelSaveAction.bind(this);
     this.state = {
       addNewList: false,
     };
@@ -28,6 +30,7 @@ export default class ExpensesBase extends Component {
   }
 
   saveNewList(data) {
+    console.log(data);
     this.expensesActions.postExpenses(data);
     this.setState({ addNewList: false });
   }

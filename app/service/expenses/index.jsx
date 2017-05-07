@@ -12,7 +12,7 @@ export default class ExpensesService extends ServiceUtils {
       })
       .then(this.checkForError)
       .then(resolve)
-      .catch(err => this.handleError.bind(null, err.serverError, reject));
+      .catch(reject);
     });
   }
 
@@ -24,7 +24,7 @@ export default class ExpensesService extends ServiceUtils {
       })
       .then(this.checkForError)
       .then(resolve)
-      .catch(err => this.handleError.bind(null, err.serverError, reject));
+      .catch(reject);
     });
   }
 
@@ -37,7 +37,7 @@ export default class ExpensesService extends ServiceUtils {
       })
       .then(this.checkForError)
       .then(resolve)
-      .catch(err => this.handleError.bind(null, err.serverError, reject));
+      .catch(reject);
     });
   }
 

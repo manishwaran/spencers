@@ -5,4 +5,11 @@ export default {
     { header: 'Category', accessor: 'category' },
     { header: 'Notes', accessor: 'category' },
   ],
+  defaultCategory: [
+    'Fuel',
+    'Food',
+    'Shopping',
+    'Electronics',
+    'Subscriptions',
+  ],
 };

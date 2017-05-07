@@ -1,0 +1,13 @@
+.component-add-expense {
+  .expense-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .category {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
