@@ -1,13 +1,11 @@
 .view-component {
-  .appbar-img {
-    width: 40px;
-    margin-right: 15px;
-  }
-  .title {
-    padding-left: 0px;
+  .see-stats {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0% 4%;
   }
   .expenses-list {
-    margin: 4% 5%;
+    margin: 1% 5% 4% 5%;
   }
   .add-field-button{
     position: fixed;
