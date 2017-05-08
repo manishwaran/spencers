@@ -1,0 +1,18 @@
+.component-categories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  width: 100%;
+  .component-category-view {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    .category-name {
+      min-width: 120px;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+  }
+}

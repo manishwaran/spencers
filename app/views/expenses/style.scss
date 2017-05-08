@@ -1,0 +1,16 @@
+.view-component {
+  .see-stats {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0% 4%;
+  }
+  .expenses-list {
+    margin: 1% 5% 4% 5%;
+  }
+  .add-field-button{
+    position: fixed;
+    bottom: 75px;
+    right: 45px;
+    z-index: 1;
+  }
+}

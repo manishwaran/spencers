@@ -7,4 +7,5 @@ export default {
     database: 'spencers',
   },
   serverPort: 4000,
+  expenseCollectionName: 'expenses',
 };
