@@ -22,7 +22,7 @@ app.get('/spencers/categories', stats.getDistintCategory);
 
 app.get('/spencers/stats/daily', stats.getDailyStats);
 app.get('/spencers/stats/monthly', stats.getMonthlyStats);
-
+app.get('/spencers/stats/weekly', stats.getWeeklyStats);
 
 app.listen(config.serverPort, () => {
   console.log(`listening to port ${config.serverPort}`);
