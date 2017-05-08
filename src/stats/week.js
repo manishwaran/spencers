@@ -15,11 +15,11 @@ export default [
     },
   },
   {
-    $unwind: '$category'
+    $unwind: '$category',
   },
   {
     $match: {
-      category: ''
-    }
-  }
-]
+      category: '',
+    },
+  },
+];
