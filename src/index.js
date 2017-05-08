@@ -20,7 +20,7 @@ app.delete('/spencers/expense', expense.del);
 
 app.get('/spencers/categories', stats.getDistintCategory);
 
-app.get('/spencers/stats/day', stats.getDailyStats);
+app.get('/spencers/stats/daily', stats.getDailyStats);
 app.get('/spencers/stats/monthly', stats.getMonthlyStats);
 
 

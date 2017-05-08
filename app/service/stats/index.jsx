@@ -18,7 +18,7 @@ export default class StatsService extends ServiceUtils {
 
   getDailyStats(category) {
     return new Promise((resolve, reject) => {
-      fetch(`/spencers/stats/day?category=${category}`, {
+      fetch(`/spencers/stats/daily?category=${category}`, {
         method: 'GET',
         credentials: 'same-origin',
       })

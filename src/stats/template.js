@@ -9,7 +9,7 @@ export default {
       month: {
         $substr: ['$date', 5, 2],
       },
-      date: {
+      day: {
         $substr: ['$date', 8, 2],
       },
     },
