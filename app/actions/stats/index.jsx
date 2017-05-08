@@ -9,6 +9,8 @@ export default class StatsActions {
   constructor() {
     this.statsService = new StatsService();
     this.getCategories = this.getCategories.bind(this);
+    this.getDailyStats = this.getDailyStats.bind(this);
+    this.getMonthlyStats = this.getMonthlyStats.bind(this);
   }
 
   @action('Update stats')

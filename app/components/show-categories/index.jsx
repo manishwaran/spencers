@@ -1,25 +1,40 @@
 import React, { Component } from 'react';
 
 import './style.scss';
+import Modal from '../modal';
 import Category from './category';
 import PropTypes from './proptypes';
-import defaultProps from './default-props';
-
 
 export default class Categories extends Component {
 
   static propTypes = PropTypes;
-  static defaultProps = defaultProps;
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      showStats: false,
+      statsTitle: '',
+    };
+  }
+
+  onViewedStats() {
+    this.setState({ showStats: false, statsTitle: '' });
+  }
 
   getCategoryComponent() {
     const data = this.props.data;
     return data.map(item => (
       <Category
         key={item}
-        name={item}
+        category={item}
         showDailyStats={this.props.showDailyStats}
+        showMonthlyStats={this.props.showMonthlyStats}
       />
     ));
+  }
+
+  viewStats(statsTitle) {
+    this.setState({ showStats: true, statsTitle });
   }
 
   render() {
@@ -29,6 +44,11 @@ export default class Categories extends Component {
         <div className="categories">
           {allCategories}
         </div>
+        <Modal
+          title="Add New Expense"
+          show={this.props.showStats}
+          onAccept={this.saveNewList}
+        />
       </div>
     );
   }

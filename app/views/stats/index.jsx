@@ -14,19 +14,21 @@ export default class Stats extends Component {
 
   constructor(props) {
     super(props);
-    this.expensesActions = new StatsActions();
+    this.statsActions = new StatsActions();
   }
 
   componentWillMount() {
-    this.expensesActions.getCategories();
+    this.statsActions.getCategories();
   }
 
   render() {
-    console.log(StatsStore.CATEGORIES);
     return (
       <div className="view-stats">
         <Categories
+          stasts={StatsStore.STATS || []}
           data={StatsStore.CATEGORIES || []}
+          showDailyStats={this.statsActions.getDailyStats}
+          showMonthlyStats={this.statsActions.getMonthlyStats}
         />
       </div>
     );
