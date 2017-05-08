@@ -15,7 +15,7 @@ export default class StatsActions {
 
   @action('Update stats')
   updateStats(stats) {
-    StatsStore.STATS = stats || [];
+    StatsStore.STATS = stats.data || [];
   }
 
   @action('Update categories')
@@ -33,20 +33,22 @@ export default class StatsActions {
   }
 
   getDailyStats(category) {
+    this.updateStats({});
     this.statsService.getDailyStats(category)
     .then(this.updateStats)
     .catch((err) => {
       ActionUtils.setToastMessage(false, false, err.serverError);
-      this.updateCategories();
+      this.updateStats({});
     });
   }
 
   getMonthlyStats(category) {
+    this.updateStats({});
     this.statsService.getMonthlyStats(category)
     .then(this.updateStats)
     .catch((err) => {
       ActionUtils.setToastMessage(false, false, err.serverError);
-      this.updateCategories();
+      this.updateStats({});
     });
   }
 

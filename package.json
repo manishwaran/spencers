@@ -79,6 +79,7 @@
     "react-ace": "^3.6.1",
     "react-addons-css-transition-group": "^15.3.2",
     "react-dom": "15.3.2",
+    "react-highcharts": "^12.0.0",
     "react-keydown": "^1.6.2",
     "react-router": "^2.8.1",
     "react-select": "1.0.0-beta14",

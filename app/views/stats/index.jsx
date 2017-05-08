@@ -25,7 +25,7 @@ export default class Stats extends Component {
     return (
       <div className="view-stats">
         <Categories
-          stasts={StatsStore.STATS || []}
+          stats={StatsStore.STATS || []}
           data={StatsStore.CATEGORIES || []}
           showDailyStats={this.statsActions.getDailyStats}
           showMonthlyStats={this.statsActions.getMonthlyStats}

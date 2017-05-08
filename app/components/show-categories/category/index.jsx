@@ -16,10 +16,12 @@ export default class Categories extends Component {
 
   showDailyStats() {
     this.props.showDailyStats(this.props.category);
+    this.props.viewStats(`Dalily stats for ${this.props.category}`);
   }
 
   showMonthlyStats() {
     this.props.showMonthlyStats(this.props.category);
+    this.props.viewStats(`Monthly stats for ${this.props.category}`);
   }
 
   render() {
