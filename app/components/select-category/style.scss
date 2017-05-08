@@ -2,4 +2,24 @@
   .Select {
     width: 200px;
   }
+
+  .component-category-value {
+    display: inline-flex;
+    padding-right: 5px;
+    .value {
+      display: inline;
+      border: 1px solid #d7bae6;
+      border-radius: 3px 0px 0px 3px;
+      background-color: #9a88a0;
+      padding: 2px;
+    }
+    .delete {
+      cursor: pointer;
+      display: inline;
+      border: 1px solid red;
+      border-radius: 0px 3px 3px 0px;
+      padding: 2px;
+      background: rgba(247, 108, 109, 0.92);
+    }
+  }
 }

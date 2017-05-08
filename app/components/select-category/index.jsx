@@ -4,6 +4,7 @@ import AutoComplete from 'material-ui/AutoComplete';
 import './style.scss';
 import PropTypes from './proptypes';
 import constants from '../../constants';
+import CategoryValue from './category-value';
 
 export default class SelectCategory extends Component {
 
@@ -11,8 +12,9 @@ export default class SelectCategory extends Component {
 
   constructor(props) {
     super(props);
-    this.onUpdateInput = this.onUpdateInput.bind(this);
+    this.deleteValue = this.deleteValue.bind(this);
     this.onNewRequest = this.onNewRequest.bind(this);
+    this.onUpdateInput = this.onUpdateInput.bind(this);
     this.state = {
       searchText: '',
       values: [],
@@ -32,9 +34,30 @@ export default class SelectCategory extends Component {
     this.setState({ searchText });
   }
 
+  getCategoryValues() {
+    return this.state.values.map((value, index) => (
+      <CategoryValue
+        value={value}
+        index={index}
+        key={index}
+        deleteValue={this.deleteValue}
+      />
+    ));
+  }
+
+  deleteValue(index) {
+    const values = this.state.values;
+    values.splice(index, 1);
+    this.setState({ values });
+  }
+
   render() {
+    const categoryValues = this.getCategoryValues();
     return (
       <div className="component-category">
+        <div className="component-category-values">
+          {categoryValues}
+        </div>
         <AutoComplete
           maxSearchResults={5}
           floatingLabelText="Select Category"

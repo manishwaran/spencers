@@ -1,9 +1,9 @@
 .component-add-expense {
   .expense-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
   }
   .category {
     display: inline-flex;
