@@ -10,6 +10,7 @@ export default class StatsActions {
     this.statsService = new StatsService();
     this.getCategories = this.getCategories.bind(this);
     this.getDailyStats = this.getDailyStats.bind(this);
+    this.getWeeklyStats = this.getWeeklyStats.bind(this);
     this.getMonthlyStats = this.getMonthlyStats.bind(this);
   }
 
@@ -45,6 +46,16 @@ export default class StatsActions {
   getMonthlyStats(category) {
     this.updateStats({});
     this.statsService.getMonthlyStats(category)
+    .then(this.updateStats)
+    .catch((err) => {
+      ActionUtils.setToastMessage(false, false, err.serverError);
+      this.updateStats({});
+    });
+  }
+
+  getWeeklyStats(category) {
+    this.updateStats({});
+    this.statsService.getWeeklyStats(category)
     .then(this.updateStats)
     .catch((err) => {
       ActionUtils.setToastMessage(false, false, err.serverError);

@@ -34,6 +34,7 @@ export default class Categories extends Component {
         category={item}
         viewStats={this.viewStats}
         showDailyStats={this.props.showDailyStats}
+        showWeeklyStats={this.props.showWeeklyStats}
         showMonthlyStats={this.props.showMonthlyStats}
       />
     ));

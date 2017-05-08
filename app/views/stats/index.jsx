@@ -28,6 +28,7 @@ export default class Stats extends Component {
           stats={StatsStore.STATS || []}
           data={StatsStore.CATEGORIES || []}
           showDailyStats={this.statsActions.getDailyStats}
+          showWeeklyStats={this.statsActions.getWeeklyStats}
           showMonthlyStats={this.statsActions.getMonthlyStats}
         />
       </div>

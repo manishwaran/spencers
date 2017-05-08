@@ -11,12 +11,18 @@ export default class Categories extends Component {
   constructor(props) {
     super(props);
     this.showDailyStats = this.showDailyStats.bind(this);
+    this.showWeeklyStats = this.showWeeklyStats.bind(this);
     this.showMonthlyStats = this.showMonthlyStats.bind(this);
   }
 
   showDailyStats() {
     this.props.showDailyStats(this.props.category);
     this.props.viewStats(`Dalily stats for ${this.props.category}`);
+  }
+
+  showWeeklyStats() {
+    this.props.showWeeklyStats(this.props.category);
+    this.props.viewStats(`Weekly stats for ${this.props.category}`);
   }
 
   showMonthlyStats() {
@@ -36,6 +42,13 @@ export default class Categories extends Component {
           disableTouchRipple
           style={{ margin: 12 }}
           onTouchTap={this.showDailyStats}
+        />
+        <FlatButton
+          primary
+          label="Weekly Stats"
+          disableTouchRipple
+          style={{ margin: 12 }}
+          onTouchTap={this.showWeeklyStats}
         />
         <FlatButton
           primary

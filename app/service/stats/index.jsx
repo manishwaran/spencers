@@ -40,4 +40,16 @@ export default class StatsService extends ServiceUtils {
     });
   }
 
+  getWeeklyStats(category) {
+    return new Promise((resolve, reject) => {
+      fetch(`/spencers/stats/weekly?category=${category}`, {
+        method: 'GET',
+        credentials: 'same-origin',
+      })
+      .then(this.checkForError)
+      .then(resolve)
+      .catch(reject);
+    });
+  }
+
 }
