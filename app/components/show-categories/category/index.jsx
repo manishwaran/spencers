@@ -26,7 +26,7 @@ export default class Categories extends Component {
 
   render() {
     return (
-      <div className="component-category panel panel-default">
+      <div className="component-category-view panel panel-default">
         <div className="category-name">
           {this.props.category}
         </div>

@@ -52,6 +52,7 @@ export default class Categories extends Component {
     });
     return (
       <div className="component-categories">
+        <h4>Stats</h4>
         <div className="categories">
           {allCategories}
         </div>
