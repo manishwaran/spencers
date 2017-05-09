@@ -47,7 +47,7 @@ export default class StatsActions {
 
   getMonthlyStats(category) {
     this.updateStats({});
-    ActionUtils.setToastMessage(true, false, 'Fetching monthly.');
+    ActionUtils.setToastMessage(true, false, 'Fetching monthly stats.');
     this.statsService.getMonthlyStats(category)
     .then(this.updateStats)
     .catch((err) => {

@@ -36,7 +36,7 @@ export default class AddExpense extends Component {
   }
 
   validateExpense(expense) {
-    const requiredField = ['amount', 'category', 'date', 'title'];
+    const requiredField = ['title', 'amount', 'category', 'date'];
     for (let index = 0; index < requiredField.length; index += 1) {
       if (expense[requiredField[index]] === undefined) {
         ActionUtils.setToastMessage(false, false, `Field ${requiredField[index]} can not be empty.`);
