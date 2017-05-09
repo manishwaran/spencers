@@ -18,6 +18,7 @@ export default class ExpensesService extends ServiceUtils {
   }
 
   deleteExpenses(id) {
+    console.log(`/spencers/expense?id=${id}`);
     return new Promise((resolve, reject) => {
       fetch(`/spencers/expense?id=${id}`, {
         method: 'DELETE',

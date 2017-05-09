@@ -1,4 +1,15 @@
 .view-component {
+  .delete-row {
+    color: #dcd2d2;
+    cursor: pointer;
+    background: #ec2e2e;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .see-stats {
     display: flex;
     flex-direction: row-reverse;

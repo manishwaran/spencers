@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 
 import './style.scss';
@@ -26,7 +26,19 @@ export default class ExpensesBase extends Component {
   }
 
   getTableHeader() {
+    const _this = this;
     return [
+      { accessor: '_id',
+        render: data => (
+          <div
+            className="delete-row"
+            onClick={() => this.expensesActions.deleteExpenses(data.value)}
+          >
+            x
+          </div>
+        ),
+        maxWidth: 30,
+      },
       { header: 'Title', accessor: 'title' },
       { header: 'Amount', accessor: 'amount' },
       { header: 'Category',

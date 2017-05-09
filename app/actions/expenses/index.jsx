@@ -9,6 +9,8 @@ export default class ExpensesActions {
   constructor() {
     this.expensesService = new ExpensesService();
     this.getExpenses = this.getExpenses.bind(this);
+    this.postExpenses = this.postExpenses.bind(this);
+    this.deleteExpenses = this.deleteExpenses.bind(this);
   }
 
   @action('Update expenses store')
@@ -28,8 +30,8 @@ export default class ExpensesActions {
 
   deleteExpenses(id) {
     ActionUtils.setToastMessage(true, false, 'Deleting expences.');
-    this.expensesService.getExpenses(id)
-    .then(this.updateExpenses)
+    this.expensesService.deleteExpenses(id)
+    .then(this.getExpenses)
     .catch((err) => {
       ActionUtils.setToastMessage(false, false, err.serverError);
       this.updateExpenses({});
@@ -39,7 +41,6 @@ export default class ExpensesActions {
   postExpenses(data) {
     ActionUtils.setToastMessage(true, false, 'Adding expences.');
     this.expensesService.postExpenses(data)
-    .then(this.updateExpenses)
     .then(this.getExpenses)
     .catch((err) => {
       ActionUtils.setToastMessage(false, false, err.serverError);
