@@ -6,6 +6,6 @@ export default {
     port: '33261',
     database: 'spencers',
   },
-  serverPort: 1111,
+  serverPort: 5000,
   expenseCollectionName: 'expenses',
 };
