@@ -55,9 +55,6 @@ export default class SelectCategory extends Component {
     const categoryValues = this.getCategoryValues();
     return (
       <div className="component-category">
-        <div className="component-category-values">
-          {categoryValues}
-        </div>
         <AutoComplete
           maxSearchResults={5}
           floatingLabelText="Select Category"
@@ -68,6 +65,9 @@ export default class SelectCategory extends Component {
           dataSource={constants.defaultCategory}
           filter={AutoComplete.caseInsensitiveFilter}
         />
+        <div className="component-category-values">
+          {categoryValues}
+        </div>
       </div>
     );
   }

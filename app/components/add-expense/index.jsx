@@ -44,7 +44,10 @@ export default class AddExpense extends Component {
           onAccept={this.saveNewList}
           onCancel={this.props.cancelSaveAction}
         >
-          <div className="expense-form">
+          <div
+            className="expense-form"
+            style={{ display: 'flex', flexDirection: 'column', marginLeft: 40 }}
+          >
             <TextField
               hintText="Enter Title"
               floatingLabelText="Title"

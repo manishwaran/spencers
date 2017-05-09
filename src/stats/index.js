@@ -39,8 +39,9 @@ export default class Stats extends StatsBase {
   getWeeklyStats(req, res) {
     const category = req.query.category;
     const params = this.getWeeklyStatsParams(category);
+    console.log(params);
     this.db.getConnection()
-    .then(db => db.collection(this.collectionName).aggregate(...params))
+    .then(db => db.collection(this.collectionName).aggregate(params))
     .then(data => data.toArray())
     .then(this.performWeeklyAggregation)
     .then(data => res.status(200).send(JSON.stringify({ data, message: 'Monthly stats fetched' })))

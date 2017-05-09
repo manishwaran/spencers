@@ -1,4 +1,7 @@
 .component-category {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   .Select {
     width: 200px;
   }
@@ -6,6 +9,7 @@
   .component-category-value {
     display: inline-flex;
     padding-right: 5px;
+    margin-left: 20px;
     .value {
       display: inline;
       border: 1px solid #d7bae6;

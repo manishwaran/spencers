@@ -13,4 +13,9 @@
     right: 45px;
     z-index: 1;
   }
+  .expense-form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 45px;
+  }
 }

@@ -33,7 +33,14 @@ export default class ExpensesBase extends Component {
         accessor: 'category',
         render: data => ((data.value && data.value.join(' ')) || 'NA'),
       },
-      { header: 'Notes', accessor: 'notes' },
+      { header: 'On',
+        accessor: 'date',
+        render: data => (((data.value && data.value.slice(0, 10)) || 'NA')),
+      },
+      { header: 'Notes',
+        accessor: 'notes',
+        render: data => ((data.value) || 'NA'),
+      },
     ];
   }
 
