@@ -3,7 +3,12 @@
     width: 40px;
     margin-right: 15px;
   }
+  .appbar-logo {
+    display: flex;
+    align-items: center;
+  }
   .title {
     padding-left: 0px;
+    display: flex;
   }
 }
