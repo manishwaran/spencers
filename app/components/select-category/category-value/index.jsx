@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
 import React, { Component } from 'react';
 
 import PropTypes from './proptypes';
@@ -14,7 +16,7 @@ export default class SelectCategory extends Component {
         </div>
         <div
           className="delete"
-          onClick = {() => this.props.deleteValue(this.props.index)}
+          onClick={() => this.props.deleteValue(this.props.index)}
         >
           x
         </div>

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 
@@ -26,7 +27,6 @@ export default class ExpensesBase extends Component {
   }
 
   getTableHeader() {
-    const _this = this;
     return [
       { accessor: '_id',
         render: data => (

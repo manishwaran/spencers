@@ -23,10 +23,7 @@ export default class SelectCategory extends Component {
 
   onNewRequest(value) {
     const values = this.state.values.concat(value);
-    this.setState({
-      values,
-      searchText: '',
-    });
+    this.setState({ values, searchText: '' });
     this.props.updateAddEpense(values, 'category', 'Array');
   }
 
