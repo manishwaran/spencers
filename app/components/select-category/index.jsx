@@ -57,7 +57,7 @@ export default class SelectCategory extends Component {
       <div className="component-category">
         <AutoComplete
           maxSearchResults={5}
-          floatingLabelText="Select Category"
+          floatingLabelText="Select Category (hit enter)"
           onChange={this.onChange}
           searchText={this.state.searchText}
           onNewRequest={this.onNewRequest}

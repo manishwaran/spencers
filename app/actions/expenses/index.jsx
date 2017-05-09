@@ -17,6 +17,7 @@ export default class ExpensesActions {
   }
 
   getExpenses() {
+    ActionUtils.setToastMessage(true, false, 'Fetching expences.');
     this.expensesService.getExpenses()
     .then(this.updateExpenses)
     .catch((err) => {
@@ -26,6 +27,7 @@ export default class ExpensesActions {
   }
 
   deleteExpenses(id) {
+    ActionUtils.setToastMessage(true, false, 'Deleting expences.');
     this.expensesService.getExpenses(id)
     .then(this.updateExpenses)
     .catch((err) => {
@@ -35,6 +37,7 @@ export default class ExpensesActions {
   }
 
   postExpenses(data) {
+    ActionUtils.setToastMessage(true, false, 'Adding expences.');
     this.expensesService.postExpenses(data)
     .then(this.updateExpenses)
     .then(this.getExpenses)

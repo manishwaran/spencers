@@ -1,0 +1,22 @@
+.component-toast {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .message {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  i{
+    margin-left: -15px;
+    &.success{
+      color: #76FF03;
+    }
+    &.error{
+      color: red;
+    }
+    &.warn {
+      color: yellow;
+    }
+  }
+}

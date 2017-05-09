@@ -11,6 +11,7 @@ class ActionUtils {
 
   @action('Toast message set')
   setToastMessage(loading = true, success = false, msg = '') {
+    this.showToast();
     UtilsStore.TOAST_MESSAGE = {
       msg,
       loading,

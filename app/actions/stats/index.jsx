@@ -25,6 +25,7 @@ export default class StatsActions {
   }
 
   getCategories() {
+    ActionUtils.setToastMessage(true, false, 'Fetching categories.');
     this.statsService.getAllCategory()
     .then(response => this.updateCategories(response.data))
     .catch((err) => {
@@ -35,6 +36,7 @@ export default class StatsActions {
 
   getDailyStats(category) {
     this.updateStats({});
+    ActionUtils.setToastMessage(true, false, 'Fetching daily stats.');
     this.statsService.getDailyStats(category)
     .then(this.updateStats)
     .catch((err) => {
@@ -45,6 +47,7 @@ export default class StatsActions {
 
   getMonthlyStats(category) {
     this.updateStats({});
+    ActionUtils.setToastMessage(true, false, 'Fetching monthly.');
     this.statsService.getMonthlyStats(category)
     .then(this.updateStats)
     .catch((err) => {
@@ -55,6 +58,7 @@ export default class StatsActions {
 
   getWeeklyStats(category) {
     this.updateStats({});
+    ActionUtils.setToastMessage(true, false, 'Fetching weekly stats.');
     this.statsService.getWeeklyStats(category)
     .then(this.updateStats)
     .catch((err) => {

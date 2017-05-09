@@ -1,39 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TextField from 'material-ui/TextField';
 import DatePicker from 'material-ui/DatePicker';
 
 import './style.scss';
 import Modal from '../modal';
-import PropTypes from './proptypes';
 import SelectCategory from '../select-category';
+import AddExpenseBase from './base';
 
-export default class AddExpense extends Component {
-
-  static propTypes = PropTypes;
-
-  constructor(props) {
-    super(props);
-    this.saveNewList = this.saveNewList.bind(this);
-    this.updateAddEpense = this.updateAddEpense.bind(this);
-    this.state = {
-      addNewList: false,
-    };
-    this.expense = {};
-  }
-
-  saveNewList() {
-    this.props.saveNewList(this.expense);
-  }
-
-  updateAddEpense(data, field, type) {
-    let value = null;
-    switch (type) {
-      case 'number': value = Number(data); break;
-      case 'date': value = new Date(data).toISOString(); break;
-      default: value = data;
-    }
-    this.expense[field] = value;
-  }
+export default class AddExpense extends AddExpenseBase {
 
   render() {
     return (
