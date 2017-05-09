@@ -9,8 +9,8 @@ import ExpenseHandler from './expense';
 const app = express();
 const stats = new ExpenseStats();
 const expense = new ExpenseHandler();
-
-app.use('/:path', express.static(path.join(__dirname, '/app')));
+app.use('/', express.static(path.join(__dirname, '/app')));
+app.use('/:pathname', express.static(path.join(__dirname, '/app')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

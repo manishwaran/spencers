@@ -81,7 +81,6 @@ export default class StatsBase {
 
   performWeeklyAggregation(data, keys = ['week', 'month', 'year']) {
     const dataArray = this.mapWithWeek(data);
-    console.log(dataArray);
     const result = {};
     dataArray.forEach((item) => {
       let groupKey = '';

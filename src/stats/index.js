@@ -39,7 +39,6 @@ export default class Stats extends StatsBase {
   getWeeklyStats(req, res) {
     const category = req.query.category;
     const params = this.getWeeklyStatsParams(category);
-    console.log(params);
     this.db.getConnection()
     .then(db => db.collection(this.collectionName).aggregate(params))
     .then(data => data.toArray())
