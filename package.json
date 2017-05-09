@@ -12,7 +12,7 @@
     "compileOnce": "webpack --config webpack/webpack.config.js -p --progress",
     "compile": "webpack --config webpack/webpack.config.js -d --progress --watch",
     "dev": "nodemon dist/index.js",
-    "start": "npm run compileOnce && node dist/index.js"
+    "start": "npm i && npm run compileOnce && node dist/index.js"
   },
   "repository": {
     "type": "git",
