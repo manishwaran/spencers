@@ -58,7 +58,7 @@ export default class Categories extends Component {
           {allCategories}
         </div>
         <Modal
-          title="Add New Expense"
+          title="View Stats"
           onAccept={this.onStatsViewed}
           show={this.state.showStats && this.props.stats.length}
         >
