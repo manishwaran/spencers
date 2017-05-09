@@ -1,8 +1,11 @@
 {
-  "name": "javascript-easy-object",
+  "name": "spencers",
   "version": "1.0.2",
   "description": "",
   "main": "src/index.js",
+  "engines": {
+    "node": "6.9.1"
+  },
   "scripts": {
     "lint": "eslint --config ./.eslintrc.js ./app",
     "compileOnce": "webpack --config webpack/webpack.config.js -p --progress",
