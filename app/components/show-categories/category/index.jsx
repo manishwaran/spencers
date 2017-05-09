@@ -55,7 +55,7 @@ export default class Categories extends Component {
           disableTouchRipple
           label="Monthly Stats"
           style={{ margin: 12 }}
-          onTouchTap={this.showDailyStats}
+          onTouchTap={this.showMonthlyStats}
         />
       </div>
     );
