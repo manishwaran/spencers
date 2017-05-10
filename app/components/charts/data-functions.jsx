@@ -5,15 +5,13 @@ import BarChartFunctions from './functions';
 export default class ChartDataFunctions extends BarChartFunctions {
 
   getChartConfig() {
-    const minHeight = 400;
-    const timeSeries = this.props.chartData.timeSeries;
-    const height = timeSeries.length * 30;
     const title = this.props.title;
+    const timeSeries = this.props.chartData.timeSeries;
     return {
       chart: {
         type: 'bar',
-        height: height > minHeight ? height : minHeight,
-        width: window.innerWidth / 2,
+        height: 400,
+        width: 650,
       },
       title: {
         text: title,
